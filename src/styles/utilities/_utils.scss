@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.fs-800 {
+  font-size: $fs-800;
+}
+
+.fs-500 {
+  font-size: $fs-500;
+}
+
+.fs-400 {
+  font-size: $fs-400;
+}
+
+.fs-300 {
+  font-size: $fs-300;
+}
+
+.fs-200 {
+  font-size: $fs-200;
+}
