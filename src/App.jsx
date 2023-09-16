@@ -4,6 +4,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <h1>test text is test text</h1>
     </div>
   )
 }

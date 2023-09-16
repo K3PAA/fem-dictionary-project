@@ -1,2 +1,16 @@
-@use 'utilities';
+@use 'utilities' as *;
 @use 'components';
+
+body.darkmode {
+  background-color: $clr-dark-900;
+}
+
+body.sans-serif {
+  font-family: $ff-inter;
+}
+body.serif {
+  font-family: $ff-lora;
+}
+body.mono {
+  font-family: $ff-inconsolata;
+}
