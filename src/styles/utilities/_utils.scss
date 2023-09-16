@@ -13,16 +13,37 @@
 }
 
 .container {
-  --max-width: 1110px;
-  --padding: 1rem;
+  --_max-width: 768px;
+  --_padding: 1rem;
 
-  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  width: min(var(--_max-width), 100% - (var(--_padding) * 2));
   margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--_gap, 1rem);
+}
+
+.flex--between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--_gap, 1rem);
 }
 
 .even-columns {
   display: grid;
   gap: 1rem;
+}
+
+.vertical-line {
+  height: auto;
+  width: 1px;
+  background-color: $clr-light-200;
 }
 
 @media (min-width: 50em) {

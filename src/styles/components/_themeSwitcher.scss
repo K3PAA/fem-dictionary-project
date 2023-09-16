@@ -1,0 +1,36 @@
+@use '../utilities/variables' as *;
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  cursor: pointer;
+
+  &__indicator {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $clr-light-300;
+  }
+
+  &__indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translate(0, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $clr-light-0;
+    transition: all 400ms ease;
+  }
+  &__icon {
+  }
+}
+
+.theme-switcher__indicator.active::after {
+  left: calc(37px - 14px);
+}
