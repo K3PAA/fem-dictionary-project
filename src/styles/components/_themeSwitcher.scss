@@ -34,3 +34,13 @@
 .theme-switcher__indicator.active::after {
   left: calc(37px - 14px);
 }
+
+body.darkmode .theme-switcher {
+  &__indicator {
+    background-color: $clr-purple;
+  }
+  &__icon {
+    filter: invert(57%) sepia(82%) saturate(5972%) hue-rotate(252deg)
+      brightness(92%) contrast(103%);
+  }
+}

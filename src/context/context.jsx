@@ -21,6 +21,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'TOOGLE_DARKMODE' })
   }
 
+  const setWord = (txt) => {
+    dispatch({ type: 'UPDATE_WORD', payload: txt })
+  }
+
   const changeFontFamily = (value) => {
     dispatch({ type: 'CHANGE_FONTFAMILY', payload: value })
   }
@@ -33,7 +37,9 @@ const AppProvider = ({ children }) => {
   }, [state.fontFamily])
 
   return (
-    <AppContext.Provider value={{ ...state, toogleDarkMode, changeFontFamily }}>
+    <AppContext.Provider
+      value={{ ...state, toogleDarkMode, changeFontFamily, setWord }}
+    >
       {children}
     </AppContext.Provider>
   )

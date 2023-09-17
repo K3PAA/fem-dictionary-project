@@ -2,6 +2,7 @@ import logoIcon from '../../assets/images/logo.svg'
 import { useGlobalContext } from '../../context/context'
 import { useEffect, useRef } from 'react'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
+
 const Header = () => {
   const { changeFontFamily, fontFamily } = useGlobalContext()
   const select = useRef()
@@ -18,6 +19,7 @@ const Header = () => {
       }
     }
   }, [])
+
   return (
     <header className='primary-header | container flex flex--between'>
       <img src={logoIcon} alt='logo' className='primary-header__logo | logo' />

@@ -1,0 +1,38 @@
+@use '../utilities/variables' as *;
+
+.search-input {
+  position: relative;
+
+  &__input {
+    border: 0;
+    font-size: $fs-400;
+    font-weight: $fw-bold;
+    color: $clr-dark-200;
+    padding: $space-300 $space-400;
+    width: 100%;
+    background-color: $clr-light-100;
+    border-radius: $space-250;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: $space-400;
+    transform: translate(0%, -50%);
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 0;
+    background-color: transparent;
+  }
+
+  &__icon {
+  }
+}
+
+body.darkmode .search-input {
+  &__input {
+    background-color: $clr-dark-800;
+    color: $clr-light-0;
+  }
+}

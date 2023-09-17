@@ -7,6 +7,10 @@ const reducer = (state, action) => {
     localStorage.setItem('font', JSON.stringify(action.payload))
     return { ...state, fontFamily: action.payload }
   }
+
+  if (action.type === 'UPDATE_WORD') {
+    return { ...state, word: action.payload }
+  }
   return state
 }
 

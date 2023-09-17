@@ -7,6 +7,32 @@
   }
   &__content {
   }
+
   &__dropdown {
+    display: inline-block;
+    font-weight: $fw-bold;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0.5em 2em 0.5em 0.5em;
+    cursor: pointer;
+  }
+
+  &__dropdown::before {
+    content: '';
+    width: 0.8em;
+    height: 0.5em;
+    background-color: $clr-purple;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+
+  &__dropdown::-ms-expand {
+    display: none;
+  }
+}
+
+body.darkmode .primary-header {
+  &__dropdown {
+    color: $clr-light-0;
   }
 }
