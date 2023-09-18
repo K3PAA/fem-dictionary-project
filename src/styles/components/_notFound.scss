@@ -1,0 +1,27 @@
+@use '../utilities/variables' as *;
+
+.notFound {
+  flex-direction: column;
+  gap: $space-400;
+  align-items: center;
+
+  &__icon {
+    font-size: $fs-800;
+  }
+
+  &__title {
+    font-weight: $fw-bold;
+    text-align: center;
+  }
+  &__desc {
+    color: $clr-light-300;
+    text-align: center;
+    width: 80%;
+  }
+}
+
+body.darkmode .notFound {
+  &__title {
+    color: $clr-light-0;
+  }
+}

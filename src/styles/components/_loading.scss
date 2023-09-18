@@ -1,0 +1,12 @@
+@use '../utilities/variables' as *;
+
+.loading {
+  margin-top: $space-900;
+
+  &__title {
+    color: $clr-dark-200;
+    font-size: $fs-500;
+    text-align: center;
+    font-weight: bold;
+  }
+}

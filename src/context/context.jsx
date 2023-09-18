@@ -11,6 +11,7 @@ let initialValues = {
   data: [],
   loading: false,
   error: false,
+  errorMsg: '',
 }
 
 const AppProvider = ({ children }) => {
@@ -23,6 +24,20 @@ const AppProvider = ({ children }) => {
 
   const setWord = (txt) => {
     dispatch({ type: 'UPDATE_WORD', payload: txt })
+  }
+
+  const fetchData = async (word) => {
+    dispatch({ type: 'START_FETCHING' })
+    try {
+      const resp = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      )
+      const data = await resp.json()
+
+      dispatch({ type: 'SET_DATA', payload: data })
+    } catch (error) {
+      dispatch({ type: 'FETCH_ERROR', payload: error })
+    }
   }
 
   const changeFontFamily = (value) => {
@@ -38,7 +53,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ ...state, toogleDarkMode, changeFontFamily, setWord }}
+      value={{ ...state, toogleDarkMode, changeFontFamily, setWord, fetchData }}
     >
       {children}
     </AppContext.Provider>

@@ -18,7 +18,7 @@ const Header = () => {
         break
       }
     }
-  }, [])
+  }, [fontFamily])
 
   return (
     <header className='primary-header | container flex flex--between'>

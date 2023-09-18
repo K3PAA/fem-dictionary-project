@@ -2,10 +2,11 @@ import searchIcon from '../../assets/images/icon-search.svg'
 import { useGlobalContext } from '../../context/context'
 
 const SearchInput = () => {
-  const { word, setWord } = useGlobalContext()
+  const { word, setWord, fetchData } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    fetchData(word)
     setWord('')
   }
 
