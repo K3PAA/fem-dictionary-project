@@ -57,9 +57,12 @@ const Word = () => {
     <main className='word | container'>
       {word.word ? (
         <>
-          <section className='word__top'>
-            <h1 className='word__title'>{word.word}</h1>
-            <p className='word__pronunciation'>{findText(word.phonetics)}</p>
+          <section className='word__top | flex flex--between'>
+            <div className=''>
+              <h1 className='word__title'>{word.word}</h1>
+              <p className='word__pronunciation'>{findText(word.phonetics)}</p>
+            </div>
+
             <button onClick={playAudio} className='word__play'>
               <img src={playIcon} alt='play icon' className='word__play-icon' />
             </button>
@@ -68,15 +71,23 @@ const Word = () => {
           {word.meanings.map((meaning, i) => {
             return (
               <>
-                <h2 key={i} className='word__partOfSpeech'>
-                  {meaning.partOfSpeech}
-                </h2>
+                <div className='flex flex--center'>
+                  <h2 key={i} className='word__partOfSpeech'>
+                    {meaning.partOfSpeech}
+                  </h2>
+                  <div className='line'></div>
+                </div>
+
+                <h3 className='word__meaning'>Meaning</h3>
+
                 <ul className='word__partOfSpeechList'>
                   {meaning.definitions.map((text, j) => {
                     return (
                       <li key={j} className='word__partOfSpeechListItem'>
-                        <p>{text.definition}</p>
-                        {text.example && <p>{text.example}</p>}
+                        <p className='word__definition'>{text.definition}</p>
+                        {text.example && (
+                          <p className='word__example'>{text.example}</p>
+                        )}
                       </li>
                     )
                   })}
@@ -100,7 +111,7 @@ const Word = () => {
                   ''
                 )}
 
-                {meaning.synonyms.length ? (
+                {meaning.antonyms.length ? (
                   <h3 className='word__addictional'>
                     Antonyms:{' '}
                     {meaning.antonyms.map((ant, i) => {

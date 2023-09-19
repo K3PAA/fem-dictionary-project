@@ -1,1 +1,123 @@
 @use '../utilities/variables' as *;
+
+.word {
+  &__top {
+  }
+
+  &__title {
+    color: $clr-dark-200;
+    font-size: $fs-800;
+    font-weight: $fw-bold;
+  }
+
+  &__pronunciation {
+    color: $clr-purple;
+    font-size: $fs-500;
+    font-weight: $fw-normal;
+  }
+
+  &__play {
+    border-radius: 50%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__play-icon {
+    border-radius: 50%;
+  }
+
+  &__partOfSpeech {
+    margin-block: $space-600;
+    color: $clr-dark-200;
+    font-size: $fs-400;
+    font-weight: $fw-bold;
+  }
+
+  &__meaning {
+    color: $clr-light-300;
+    font-size: $fs-400;
+  }
+  &__partOfSpeechList {
+    list-style: none;
+    margin-top: $space-400;
+    margin-bottom: $space-400;
+  }
+  &__partOfSpeechListItem {
+    margin-left: $space-600;
+    margin-block: $space-150;
+    color: $clr-dark-200;
+    font-size: $fs-300;
+    line-height: $fs-400;
+  }
+
+  &__definition {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      transform: translate(0%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $clr-purple;
+    }
+  }
+
+  &__example {
+    margin-top: $space-150;
+    margin-bottom: $space-250;
+
+    color: $clr-light-300;
+    font-size: $fs-300;
+    line-height: $fs-500;
+
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+  }
+
+  &__addictional {
+    color: $clr-light-300;
+    font-size: $fs-400;
+  }
+
+  &__addictional-link {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: $clr-purple;
+    font-size: $fs-400;
+    font-weight: $fw-bold;
+    margin-right: $space-300;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: $clr-light-200;
+}
+
+body.darkmode .word {
+  &__title {
+    color: $clr-light-0;
+  }
+
+  &__partOfSpeech {
+    color: $clr-light-0;
+  }
+
+  &__partOfSpeechListItem {
+    color: $clr-light-0;
+  }
+}
+
+body.darkmode .line {
+  background-color: $clr-dark-300;
+}

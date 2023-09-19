@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+.flex--center {
+  align-items: center;
+}
+
 .grid {
   display: grid;
   gap: var(--_gap, 1rem);

@@ -4,6 +4,7 @@ const Footer = () => {
   const { data } = useGlobalContext()
   return (
     <footer className='footer | container'>
+      <div className='line'></div>
       {data.length ? (
         <p className='footer__info'>
           Source{' '}

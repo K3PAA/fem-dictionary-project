@@ -1,8 +1,28 @@
 @use '../utilities/variables' as *;
 .footer {
   &__info {
+    padding-top: $space-400;
+    display: flex;
+    gap: $space-300;
+    color: $clr-light-300;
+    font-size: $fs-200;
+    text-decoration-line: underline;
   }
 
   &__link {
+    display: flex;
+    gap: $space-100;
+    color: $clr-dark-200;
+    font-size: $fs-200;
+    text-decoration-line: underline;
+  }
+
+  margin-top: $space-400;
+  padding-bottom: $space-400;
+}
+
+body.darkmode .footer {
+  &__link {
+    color: $clr-light-0;
   }
 }
