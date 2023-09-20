@@ -1,6 +1,9 @@
 @use 'utilities' as *;
 @use 'components';
 
+body {
+  overflow-x: hidden;
+}
 body.darkmode {
   background-color: $clr-dark-900;
 }

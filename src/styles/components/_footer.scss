@@ -26,3 +26,12 @@ body.darkmode .footer {
     color: $clr-light-0;
   }
 }
+
+@media (max-width: 500px) {
+  .footer {
+    &__info {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

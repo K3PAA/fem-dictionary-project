@@ -4,20 +4,22 @@ const Footer = () => {
   const { data } = useGlobalContext()
   return (
     <footer className='footer | container'>
-      <div className='line'></div>
       {data.length ? (
-        <p className='footer__info'>
-          Source{' '}
-          <a
-            href={`https://en.wiktionary.org/wiki/${data[0].word}`}
-            className='footer__link'
-            rel='noreferrer'
-            target='_blank'
-          >
-            {`https://en.wiktionary.org/wiki/${data[0].word}`}
-            <img src={copyIcon} alt='icon' className='footer__icon' />
-          </a>
-        </p>
+        <>
+          <div className='line'></div>
+          <p className='footer__info'>
+            Source{' '}
+            <a
+              href={`https://en.wiktionary.org/wiki/${data[0].word}`}
+              className='footer__link'
+              rel='noreferrer'
+              target='_blank'
+            >
+              {`https://en.wiktionary.org/wiki/${data[0].word}`}
+              <img src={copyIcon} alt='icon' className='footer__icon' />
+            </a>
+          </p>
+        </>
       ) : (
         ''
       )}

@@ -83,14 +83,14 @@
   }
 
   &__addictional {
+    display: flex;
+    gap: $space-150;
+    flex-wrap: wrap;
     color: $clr-light-300;
     font-size: $fs-400;
   }
 
   &__addictional-link {
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
     color: $clr-purple;
     font-size: $fs-400;
     font-weight: $fw-bold;
@@ -120,4 +120,12 @@ body.darkmode .word {
 
 body.darkmode .line {
   background-color: $clr-dark-300;
+}
+
+@media (max-width: 500px) {
+  .word {
+    &__title {
+      font-size: $fs-500;
+    }
+  }
 }

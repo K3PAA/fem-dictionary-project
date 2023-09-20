@@ -97,13 +97,13 @@ const Word = () => {
                     Synonyms:{' '}
                     {meaning.synonyms.map((syn, i) => {
                       return (
-                        <button
-                          onClick={() => fetchData(syn)}
+                        <p
+                          // onClick={() => fetchData(syn)}
                           key={i}
                           className='word__addictional-link'
                         >
                           {syn}
-                        </button>
+                        </p>
                       )
                     })}
                   </h3>
@@ -116,13 +116,13 @@ const Word = () => {
                     Antonyms:{' '}
                     {meaning.antonyms.map((ant, i) => {
                       return (
-                        <button
-                          onClick={() => fetchData(ant)}
+                        <p
+                          // onClick={() => fetchData(ant)} -> Introduces bugs (bad api)
                           key={i}
                           className='word__addictional-link'
                         >
                           {ant}
-                        </button>
+                        </p>
                       )
                     })}
                   </h3>
